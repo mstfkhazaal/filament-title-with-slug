@@ -1,31 +1,37 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "mstfkhazaal/filament-title-with-slug",
+    "description": "TitleWithSlugInput - Easy Permalink Slugs for the FilamentPHP Form Builder (PHP / Laravel / Livewire)",
     "keywords": [
-        ":vendor_name",
+        "framework",
         "laravel",
-        ":package_slug"
+        "filament",
+        "slug",
+        "permalink",
+        "livewire",
+        "alpinejs",
+        "tailwindcss",
+        "mstfkhazaal",
+        "laravel",
+        "filament-title-with-slug"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/mstfkhazaal/filament-title-with-slug",
     "support": {
-        "issues": "https://github.com/:vendor_slug/:package_slug/issues",
-        "source": "https://github.com/:vendor_slug/:package_slug"
+        "issues": "https://github.com/mstfkhazaal/filament-title-with-slug/issues",
+        "source": "https://github.com/mstfkhazaal/filament-title-with-slug"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Moustafa Khazaal",
+            "email": "mstfkhazaal@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.1",
         "filament/filament": "^3.0",
-        "filament/forms": "^3.0",
-        "filament/tables": "^3.0",
         "spatie/laravel-package-tools": "^1.15.0",
-        "illuminate/contracts": "^10.0"
+        "illuminate/contracts": "^9.0|^10.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -42,13 +48,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Mstfkhazaal\\FilamentTitleWithSlug\\": "src/",
+            "Mstfkhazaal\\FilamentTitleWithSlug\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "Mstfkhazaal\\FilamentTitleWithSlug\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -68,10 +74,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Mstfkhazaal\\FilamentTitleWithSlug\\FilamentTitleWithSlugServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "FilamentTitleWithSlug": "Mstfkhazaal\\FilamentTitleWithSlug\\Facades\\FilamentTitleWithSlug"
             }
         }
     },
