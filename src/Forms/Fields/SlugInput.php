@@ -10,11 +10,11 @@ class SlugInput extends TextInput
 {
     protected string $view = 'filament-title-with-slug::forms.fields.slug-input';
 
-    protected string|Closure|null $context = null;
+    protected string | Closure | null $context = null;
 
-    protected string|Closure $basePath = '/';
+    protected string | Closure $basePath = '/';
 
-    protected string|Closure|null $baseUrl = null;
+    protected string | Closure | null $baseUrl = null;
 
     protected bool $showUrl = true;
 
@@ -22,57 +22,57 @@ class SlugInput extends TextInput
 
     protected Closure $recordSlug;
 
-    protected bool|Closure $readonly = false;
+    protected bool | Closure $readonly = false;
 
     protected string $labelPrefix;
 
-    protected Closure|null $visitLinkRoute = null;
+    protected ?Closure $visitLinkRoute = null;
 
-    protected string|Closure|null $visitLinkLabel = null;
+    protected string | Closure | null $visitLinkLabel = null;
 
-    protected bool|Closure $slugInputUrlVisitLinkVisible = true;
+    protected bool | Closure $slugInputUrlVisitLinkVisible = true;
 
-    protected Closure|null $slugInputModelName = null;
+    protected ?Closure $slugInputModelName = null;
 
-    protected string|Closure|null $slugLabelPostfix = null;
+    protected string | Closure | null $slugLabelPostfix = null;
 
-    public function slugInputUrlVisitLinkVisible(bool|Closure $slugInputUrlVisitLinkVisible): static
+    public function slugInputUrlVisitLinkVisible(bool | Closure $slugInputUrlVisitLinkVisible): static
     {
         $this->slugInputUrlVisitLinkVisible = $slugInputUrlVisitLinkVisible;
 
         return $this;
     }
 
-    public function getSlugInputUrlVisitLinkVisible(): string|null
+    public function getSlugInputUrlVisitLinkVisible(): ?string
     {
         return $this->evaluate($this->slugInputUrlVisitLinkVisible);
     }
 
-    public function slugInputModelName(Closure|null $slugInputModelName): static
+    public function slugInputModelName(?Closure $slugInputModelName): static
     {
         $this->slugInputModelName = $slugInputModelName;
 
         return $this;
     }
 
-    public function getSlugInputModelName(): string|null
+    public function getSlugInputModelName(): ?string
     {
         return $this->evaluate($this->slugInputModelName);
     }
 
-    public function slugInputVisitLinkRoute(Closure|null $visitLinkRoute): static
+    public function slugInputVisitLinkRoute(?Closure $visitLinkRoute): static
     {
         $this->visitLinkRoute = $visitLinkRoute;
 
         return $this;
     }
 
-    public function getVisitLinkRoute(): string|null
+    public function getVisitLinkRoute(): ?string
     {
         return $this->evaluate($this->visitLinkRoute);
     }
 
-    public function slugInputVisitLinkLabel(string|Closure|null $visitLinkLabel): static
+    public function slugInputVisitLinkLabel(string | Closure | null $visitLinkLabel): static
     {
         $this->visitLinkLabel = $visitLinkLabel;
 
@@ -87,10 +87,10 @@ class SlugInput extends TextInput
             return '';
         }
 
-        return $label ?: trans('filament-title-with-slug::package.permalink_label_link_visit').' '.$this->getSlugInputModelName();
+        return $label ?: trans('filament-title-with-slug::package.permalink_label_link_visit') . ' ' . $this->getSlugInputModelName();
     }
 
-    public function slugInputLabelPrefix(string|null $labelPrefix): static
+    public function slugInputLabelPrefix(?string $labelPrefix): static
     {
         $this->labelPrefix = $labelPrefix ?? trans('filament-title-with-slug::package.permalink_label');
 
@@ -102,7 +102,7 @@ class SlugInput extends TextInput
         return $this->evaluate($this->labelPrefix);
     }
 
-    public function readonly(bool|Closure $readonly): static
+    public function readonly(bool | Closure $readonly): static
     {
         $this->readonly = $readonly;
 
@@ -114,7 +114,7 @@ class SlugInput extends TextInput
         return $this->evaluate($this->readonly);
     }
 
-    public function slugInputContext(string|Closure|null $context): static
+    public function slugInputContext(string | Closure | null $context): static
     {
         $this->context = $context;
 
@@ -126,14 +126,14 @@ class SlugInput extends TextInput
         return $this->evaluate($this->context);
     }
 
-    public function slugInputSlugLabelPostfix(string|Closure|null $slugLabelPostfix): static
+    public function slugInputSlugLabelPostfix(string | Closure | null $slugLabelPostfix): static
     {
         $this->slugLabelPostfix = $slugLabelPostfix;
 
         return $this;
     }
 
-    public function getSlugLabelPostfix(): string|null
+    public function getSlugLabelPostfix(): ?string
     {
         return $this->evaluate($this->slugLabelPostfix);
     }
@@ -160,17 +160,17 @@ class SlugInput extends TextInput
 
         return $visitLinkRoute
             ? $this->getVisitLinkRoute()
-            : $this->getBaseUrl().$this->getBasePath().$this->evaluate($this->recordSlug);
+            : $this->getBaseUrl() . $this->getBasePath() . $this->evaluate($this->recordSlug);
     }
 
-    public function slugInputBasePath(string|Closure|null $path): static
+    public function slugInputBasePath(string | Closure | null $path): static
     {
         $this->basePath = ! is_null($path) ? $path : $this->basePath;
 
         return $this;
     }
 
-    public function slugInputBaseUrl(string|Closure|null $url): static
+    public function slugInputBaseUrl(string | Closure | null $url): static
     {
         $this->baseUrl = $url ?: config('app.url');
 
@@ -197,7 +197,7 @@ class SlugInput extends TextInput
     public function getFullBaseUrl(): ?string
     {
         return $this->showUrl
-            ? $this->getBaseUrl().$this->getBasePath()
+            ? $this->getBaseUrl() . $this->getBasePath()
             : $this->getBasePath();
     }
 

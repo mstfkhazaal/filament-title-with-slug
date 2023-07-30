@@ -16,9 +16,9 @@ use Filament\Tables\TablesServiceProvider;
 use Filament\Widgets\WidgetsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
+use Mstfkhazaal\FilamentTitleWithSlug\FilamentTitleWithSlugServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
-use Mstfkhazaal\FilamentTitleWithSlug\FilamentTitleWithSlugServiceProvider;
 
 class TestCase extends Orchestra
 {
